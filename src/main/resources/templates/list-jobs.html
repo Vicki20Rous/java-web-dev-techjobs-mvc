@@ -7,17 +7,25 @@
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
-
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-
-    <!-- TODO #1 - Use a loop to display job results in a table. -->
-    <ul>
-        <th:block th:each="list : ${list}">
-">
-
-        </th:block>
-    </ul>
+    <h2 class="centered">Jobs With Skill:</h2>
 </div>
 
+
+<!-- TODO #1 - Use a loop to display job results in a table. -->
+
+<table class="centeredTable">
+    <th:block th:each="tableChoice : ${tableChoices}">
+        <tr>
+            <th th:text="${tableChoice.employer}">...</th>
+            <td th:text="${tableChoice.location}">...</td>
+            <td th:text="${tableChoice.positionType}">...</td>
+            <!--/*@thymesVar id="#list" type="templates"*/-->
+            <td th:text="${tableChoice.coreCompetency}">...</td>
+        </tr>
+    </th:block>
+
+
+</table>
 </body>
 </html>
