@@ -14,18 +14,17 @@
 
 <!-- TODO #1 - Use a loop to display job results in a table. -->
 
-<table class="centeredTable">
-    <th:block th:each="tableChoice : ${tableChoices}">
-        <tr>
-            <th th:text="${tableChoice.employer}">...</th>
-            <td th:text="${tableChoice.location}">...</td>
-            <td th:text="${tableChoice.positionType}">...</td>
-            <!--/*@thymesVar id="#list" type="templates"*/-->
-            <td th:text="${tableChoice.coreCompetency}">...</td>
-        </tr>
-    </th:block>
-
+<table>
+    <th>Employers</th>
+    <th>Locations</th>
+    <th>Positions</th>
+    <th>Skills</th>
 
 </table>
+
+    <!--/*@thymesVar id="list" type="templates"*/-->
+    <ul th:each="list : ${list-jobs}" th:text="${list}">...</ul>
+
+
 </body>
 </html>
